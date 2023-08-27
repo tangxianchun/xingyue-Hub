@@ -1,126 +1,78 @@
-while _G.test do
-    wait()
- pcall(function()   
-    if not game:GetService("Workspace")["Puntos de Trabajo"]["Port Colombia"]:FindFirstChildOfClass("Part") then
-        local car = game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent
-        car.PrimaryPart = car.Body["#Weight"]
-        car:SetPrimaryPartCFrame(CFrame.new(-61726.46484375, 85, 2413.074951171875))
-        car.PrimaryPart.Anchored = true
-        wait(2)
-        car.PrimaryPart.Anchored = false
+if not getgenv().object then
+    getgenv().object = {
+    child = {},
+    descendant = {},
+    check = {},
+    Local_Connections = {}
+} elseif getgenv().object.Local_Connections == nil then
+    getgenv().object.Local_Connections = {
+} end do
+    local self,getObject = getgenv().object,Instance.new("Part")
+    
+    self.cget = getObject.GetChildren
+    self.dget = getObject.GetDescendants
+    
+    print("Disconnecting Old Connections") do
+        for i,v in pairs(self.Local_Connections) do
+            v:Disconnect()
+        end
+        self.Local_Connections = {}
+    end
+    
+    print("Loading Child Module") do
+
+        
+        function self.child.find(parent,name)
+            for _, v in pairs(self.cget(parent)) do
+                if v.Name == name then
+                    return v
+                end
+            end
+        end
+        
+        function self.child.foreach(parent,name,func)
+            for _, v in pairs(self.cget(parent)) do
+                if v.Name == name then
+                    func(v)
+                end
+            end
+        end
+        
+        function self.child.on_add(parent,func)
+            local code = Random.new(tick()+parent.Name:byte()):NextNumber()
+            self.Local_Connections[parent.Name..code] = parent.ChildAdded:Connect(func)
+            return self.Local_Connections[parent.Name..code],code
+        end
+    
+    end
+    
+    print("Loading Descendant Module") do
+        function self.descendant.find(parent,name)
+            for _, v in pairs(self.dget(parent)) do
+                if v.Name == name then
+                    return v
+                end
+            end
+        end
+        
+        function self.descendant.foreach(parent,name,func)
+            for _, v in pairs(self.dget(parent)) do
+                if v.Name == name then
+                    func(v)
+                end
+            end
+        end
+        
+        function self.descendant.on_add(parent,func)
+            local code = Random.new(tick()+parent.Name:byte()):NextNumber()
+            self.Local_Connections[parent.Name..code] = parent.DescendantAdded:Connect(func)
+            return self.Local_Connections[parent.Name..code],code
+        end
+    end
+    
+    print("Loading Check Module") do
+        function self.check.it(proper,func)
+            if proper then func() end
+        end
+    end
 end
-    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("JobGui") then
-    local car = game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent
-    car.PrimaryPart = car.Body["#Weight"]
-    car:SetPrimaryPartCFrame(CFrame.new(-61726.46484375, 85, 2413.074951171875))
-
-    wait(1)
-
-       local jobprox = nil
-    local distance = math.huge
-    for i,v in pairs(game:GetService("Workspace")["Puntos de Trabajo"]["Port Colombia"]:GetChildren()) do
-        if v.ClassName == "Part" and v:FindFirstChildOfClass("ProximityPrompt") and v:FindFirstChildOfClass("ProximityPrompt").Enabled == true  and not game.Players.LocalPlayer.PlayerGui:FindFirstChild("JobGui")  then
-    local Dist = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Position).magnitude
-    if Dist < distance then
-    distance = Dist
-
-    jobprox = v
-    end
-    end
-    end
-       local car = game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent
-    car.PrimaryPart = car.Body["#Weight"]
-    car:SetPrimaryPartCFrame(jobprox.CFrame)
-    task.wait()
-        fireproximityprompt(jobprox:FindFirstChildOfClass("ProximityPrompt"))
-    repeat wait()
-    until game.Players.LocalPlayer.PlayerGui:FindFirstChild("JobGui") or game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer") or _G.test == false
-    end
-    if game.Players.LocalPlayer.PlayerGui:FindFirstChild("JobGui") then
-        wait(3)
-        repeat wait(0.1)
-        for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.JobGui.Frame.ChooseJob.Oversized.SelectButton.MouseButton1Click)) do
-            v:Fire()
-            end
-           until game:GetService("Players").LocalPlayer.PlayerGui.JobGui.Frame:FindFirstChild("OversizedFrame") or _G.test == false
-           for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.JobGui.Frame.OversizedFrame:GetChildren()) do
-            if v.Name ~= "Bed_Industrial_Log_Carrier" then
-                v:Destroy()
-            end
-        end
-    wait()
-            repeat wait()
-                pcall(function()
-                local loc =game:GetService("Players").LocalPlayer.PlayerGui.JobGui.Frame.OversizedFrame["Bed_Industrial_Log_Carrier"].InfoFrame.LOCKED
-                loc.Visible = false
-                game:GetService("VirtualInputManager"):SendMouseButtonEvent(loc.AbsolutePosition.X+10,loc.AbsolutePosition.Y+40,1,true,game,0)
-                wait(0.1)
-                    mouse1click()
-                    wait(0.1)
-                end)
-            until game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer") or not game.Players.LocalPlayer.PlayerGui:FindFirstChild("JobGui") or _G.test == false
-            wait(1)
-            local car = game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent
-            car.PrimaryPart = car.Body["#Weight"]
-            repeat wait()
-            car:SetPrimaryPartCFrame(game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer").PrimaryPart.CFrame*CFrame.new(0,0,-55))
-            wait(0.5)
-            game:GetService("ReplicatedStorage").connect:FireServer(game:GetService("Players").LocalPlayer)
-            wait(2)
-            until   car.Body.connect:FindFirstChild("BallSocketConstraint") or _G.test == false
-        end
-    if not game:GetService("Workspace")["Delivery_Points"].Sawmill:FindFirstChild("Sawmill_Detector") then
- 
-        local car = game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent
-        car.PrimaryPart = car.Body["#Weight"]
-        car:SetPrimaryPartCFrame(CFrame.new(19233.404296875, 3000, -6995.3759765625))
-        game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer"):SetPrimaryPartCFrame(CFrame.new(19233.404296875, 3020, -6995.3759765625))
-        task.wait()
-        car.PrimaryPart.Anchored = true
-        wait(5)
-        car.PrimaryPart.Anchored = false
-    wait()
-    repeat wait(0.1)
-    for i,v in pairs(game:GetService("Workspace")["Delivery_Points"].Sawmill:GetChildren()) do
-        if v.ClassName == "Part" and v:FindFirstChildOfClass("ProximityPrompt") then
-    fireproximityprompt(v:FindFirstChildOfClass("ProximityPrompt"))
-        end
-        end
-       
-        until game:GetService("Players").LocalPlayer.PlayerGui.CollectGui.Dialog.Visible == true or not   game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer") or _G.test == false
-     repeat wait()
-         local loc =game:GetService("Players").LocalPlayer.PlayerGui.CollectGui.Dialog.Content.Footer.Normal
-         game:GetService("VirtualInputManager"):SendMouseButtonEvent(loc.AbsolutePosition.X+10,loc.AbsolutePosition.Y+40,1,true,game,0)
-         wait(0.1)
-         mouse1click()
-                    wait(0.1)
-     until not   game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer") or game:GetService("Players").LocalPlayer.PlayerGui.CollectGui.Dialog.Visible == false  or _G.test == false
-      
-    elseif game:GetService("Workspace")["Delivery_Points"].Sawmill:FindFirstChild("Sawmill_Detector") and game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer") then
-     local car = game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent
-     local car = game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent
-     car.PrimaryPart = car.Body["#Weight"]
-     car:SetPrimaryPartCFrame(CFrame.new(19233.404296875, 3000, -6995.3759765625))
-     game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer"):SetPrimaryPartCFrame(CFrame.new(19233.404296875, 3020, -6995.3759765625))
-     task.wait()
-     car.PrimaryPart.Anchored = true
-     wait(1)
-     car.PrimaryPart.Anchored = false     
-     repeat wait(0.1)
-     for i,v in pairs(game:GetService("Workspace")["Delivery_Points"].Sawmill:GetChildren()) do
-        if v.ClassName == "Part" and v:FindFirstChildOfClass("ProximityPrompt") then
-    fireproximityprompt(v:FindFirstChildOfClass("ProximityPrompt"))
-        end
-        end
-   until game:GetService("Players").LocalPlayer.PlayerGui.CollectGui.Dialog.Visible == true or not   game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer") or _G.test == false
-repeat wait()
-    local loc =game:GetService("Players").LocalPlayer.PlayerGui.CollectGui.Dialog.Content.Footer.Normal
-    game:GetService("VirtualInputManager"):SendMouseButtonEvent(loc.AbsolutePosition.X+10,loc.AbsolutePosition.Y+40,1,true,game,0)
-    wait(0.1)
-    mouse1click()
-               wait(0.1)
-until not   game:GetService("Workspace"):FindFirstChild(game.Players.LocalPlayer.Name.."'s Trailer") or game:GetService("Players").LocalPlayer.PlayerGui.CollectGui.Dialog.Visible == false or _G.test == false
-    wait(1)
-    end
-    end)
-    end
