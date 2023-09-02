@@ -1,5 +1,5 @@
 local supported_games = {
-	["5256165620"] = {
+	["3398014311"] = {
 		["name"] = "Restaurant Tycoon 2",
 		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Restaurant%20Tycoon%202.lua",
 	}
