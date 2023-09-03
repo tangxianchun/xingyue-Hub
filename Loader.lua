@@ -5,7 +5,13 @@ local supported_games = {
 			},
 	["3411100258"] = {
 		["name"] = "prtty much ervy bordr gam evr",
-		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/prtty%20much%20evry%20bordr%20gam%20evr.lua",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/prtty%20much%20evry%20bordr%20gam%20evr.lua"
+			},
+	["7305309231"] = {
+		["name"] = "Taxi Boss",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Taxi%20Boss.lua"
+			},
+
 	}
 }
 local supported_script = nil;
