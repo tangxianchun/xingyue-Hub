@@ -1,7 +1,11 @@
 local supported_games = {
 	["3398014311"] = {
 		["name"] = "Restaurant Tycoon 2",
-		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Restaurant%20Tycoon%202.lua",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Restaurant%20Tycoon%202.lua"
+			},
+	["3411100258"] = {
+		["name"] = "prtty much ervy bordr gam evr",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/prtty%20much%20evry%20bordr%20gam%20evr.lua",
 	}
 }
 local supported_script = nil;
@@ -74,7 +78,7 @@ text_1.TextColor3 = Color3.fromRGB(255, 255, 255);
 text_1.TextScaled = true;
 text_1.TextStrokeTransparency = 1;
 text_1.TextTransparency = 1;
-text_1.Text = "Detected game!";
+text_1.Text = "Zeld Hub";
 text_1.Size = UDim2.new(0.955, 0, 0.092, 0);
 text_1.Position = UDim2.new(0.023, 0, 0.393, 0);
 text_1.ZIndex = 2;
