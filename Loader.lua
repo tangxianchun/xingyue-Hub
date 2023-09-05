@@ -1,3 +1,4 @@
+setclipboard("https://discord.gg/ndrX2PuR")
 repeat wait() until game:IsLoaded()
 
 if game.PlaceId == 3398014311 then
@@ -11,7 +12,7 @@ elseif game.PlaceId == 5096191125 then
 elseif game.PlaceId == 6441847031 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Chaos.lua"))()
 else
-    setclipboard("https://discord.gg/ndrX2PuR")
+
     game:GetService("StarterGui"):SetCore("SendNotification",
         {
             Title = "Game is not supported!",
