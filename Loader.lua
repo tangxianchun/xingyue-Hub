@@ -13,7 +13,11 @@ local supported_games = {
                         },
 	["4954096313","5096191125"] = {
 		["name"] = "Field Trip Z",
-		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Field%20Trip%20Z.lua",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Field%20Trip%20Z.lua"
+			},
+	["6441847031"] = {
+		["name"] = "Chaos",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Chaos.lua",
 	}
 }
 local supported_script = nil;
