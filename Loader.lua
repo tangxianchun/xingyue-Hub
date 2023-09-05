@@ -9,7 +9,11 @@ local supported_games = {
 			},
 	["7305309231"] = {
 		["name"] = "Taxi Boss",
-		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Taxi%20Boss.lua",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Taxi%20Boss.lua"
+                        },
+	["4954096313","5096191125"] = {
+		["name"] = "Field Trip Z",
+		["script_url"] = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Field%20Trip%20Z.lua",
 	}
 }
 local supported_script = nil;
