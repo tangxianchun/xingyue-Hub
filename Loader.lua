@@ -11,6 +11,8 @@ elseif game.PlaceId == 5096191125 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Field%20Trip%20Z.lua"))()
 elseif game.PlaceId == 6441847031 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Chaos.lua"))()
+elseif game.PlaceId == 13772394625 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Blade%20Ball.lua"))()
 else
 
     game:GetService("StarterGui"):SetCore("SendNotification",
