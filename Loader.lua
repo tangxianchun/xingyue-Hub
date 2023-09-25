@@ -1,4 +1,4 @@
-setclipboard("https://discord.gg/DMjPDbuUgQ")
+setclipboard("https://discord.gg/FJFZMCu5JX")
 repeat wait() until game:IsLoaded()
 
 if game.PlaceId == 3398014311 then
@@ -15,6 +15,8 @@ elseif game.PlaceId == 13772394625 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Blade%20Ball.lua"))()
 elseif game.PlaceId == 14732610803 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/Blade%20Ball.lua"))()
+elseif game.PlaceId == 14795754298 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/The%20Russian%20Sleep%20Experiment.lua"))()
 else
 
     game:GetService("StarterGui"):SetCore("SendNotification",
