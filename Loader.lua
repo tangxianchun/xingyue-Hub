@@ -25,14 +25,13 @@ local PlaceIds = {
 	["PTMEBGE"] = { 3411100258 },
 	["TRSE"] = { 14795754298 },
 	["Chaos"] = { 6441847031 },
-    ["BaldeBall"] = {14732610803, 13772394625},
+    ["BaldeBall"] = { 14732610803, 13772394625 },
     ["FTZ"] = { 4954096313, 5096191125, 5941839954 },
     ["RT2"] = { 6299805723 },
     ["TB2"] = { 7305309231 },
 }
 if table.find(PlaceIds["TRSE"], GameId) then
 	LoadScript("The%20Russian%20Sleep%20Experiment.lua")
-end
 elseif table.find(PlaceIds["RG"], Id) then 
 	LoadScript("RoGhoul.lua")
 elseif table.find(PlaceIds["BaldeBall"], Id) then 
