@@ -33,24 +33,18 @@ local PlaceIds = {
 if table.find(PlaceIds["TRSE"], GameId) then
 	LoadScript("The%20Russian%20Sleep%20Experiment.lua")
 end
-elseif table.find(PlaceIds["RG"], Id) then -- RoGhoul
+elseif table.find(PlaceIds["RG"], Id) then 
 	LoadScript("RoGhoul.lua")
-end
-elseif table.find(PlaceIds["BaldeBall"], Id) then -- RoGhoul
+elseif table.find(PlaceIds["BaldeBall"], Id) then 
 	LoadScript("Blade%20Ball.lua")
-end
-elseif table.find(PlaceIds["Chaos"], Id) then -- RoGhoul
+elseif table.find(PlaceIds["Chaos"], Id) then 
 	LoadScript("Chaos.lua")
-end
-elseif table.find(PlaceIds["FTZ"], Id) then -- RoGhoul
+elseif table.find(PlaceIds["FTZ"], Id) then 
 	LoadScript("Field%20Trip%20Z.lua")
-end
-elseif table.find(PlaceIds["PTMEBGE"], Id) then -- RoGhoul
+elseif table.find(PlaceIds["PTMEBGE"], Id) then 
 	LoadScript("prtty%20much%20evry%20bordr%20gam%20evr.lua")
-end
-elseif table.find(PlaceIds["RT2"], Id) then -- RoGhoul
+elseif table.find(PlaceIds["RT2"], Id) then 
 	LoadScript("Restaurant%20Tycoon%202.lua")
-end
-elseif table.find(PlaceIds["TB2"], Id) then -- RoGhoul
+elseif table.find(PlaceIds["TB2"], Id) then 
 	LoadScript("Taxi%20Boss.lua")
 end
