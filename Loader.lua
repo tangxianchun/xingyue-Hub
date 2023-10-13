@@ -14,8 +14,8 @@ local function LoadScript(ScriptName)
 				end)
 			end
 			t = t + 1
-			wait(60)
-		until getgenv().Executed or t >= 30
+			wait(1)
+		until getgenv().Executed or t >= 1
 	end)
 end
 local Id = game.PlaceId
