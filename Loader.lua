@@ -1,4 +1,4 @@
-setclipboard("https://discord.gg/FJFZMCu5JX")
+
 wait(1)
 local repo = "https://raw.githubusercontent.com/iz037/Zeld-Hub/main/Script/"
 local function LoadScript(ScriptName)
